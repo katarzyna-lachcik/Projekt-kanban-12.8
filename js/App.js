@@ -1,20 +1,11 @@
-// OGÓLNA FUNKCJA
-function randomString() {
-	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
-	var str = '', i;
-	for (i = 0; i < 10; i++) {
-	  str += chars[Math.floor(Math.random() * chars.length)];
-	}
-	return str;
-}
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
-	'X-Client-Id': '1982',
-	'X-Auth-Token': 'bacd9703c2eb179450c854263628ce4d'
+    'X-Client-Id': '1982',
+    'X-Auth-Token': 'bacd9703c2eb179450c854263628ce4d'
 };
 
 $.ajaxSetup({
-	headers: myHeaders
+    headers: myHeaders
 });
 
 
@@ -38,5 +29,5 @@ function setupCards(col, cards) {
 	cards.forEach(function (card) {
         var card = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
     	col.createCard(card);
-  	})
+  	});
 }
